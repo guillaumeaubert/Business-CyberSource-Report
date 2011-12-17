@@ -1,5 +1,9 @@
 Revision history for Business-CyberSource-Report
 
+1.1.1   12/17/2011
+        Added META.yml, fixed license information, added missing prerequisites
+        and changed version number style to help with CPAN.
+
 1.1.0   12/14/2011
         Added more documentation and tests. Public release.
 

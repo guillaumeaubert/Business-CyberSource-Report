@@ -17,11 +17,11 @@ Single Transaction report.
 
 =head1 VERSION
 
-Version 1.0
+Version 1.1.1
 
 =cut
 
-our $VERSION = '1.0';
+our $VERSION = '1.1.1';
 
 our $TEST_URL = 'https://ebctest.cybersource.com/ebctest/Query';
 our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc/Query';
