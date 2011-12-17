@@ -30,5 +30,5 @@ provides:
 requires:
   perl: 5.006
 resources:
-  license: http://dev.perl.org/licenses/
+  license: http://opensource.org/licenses/artistic-license.php
 version: 1.1
