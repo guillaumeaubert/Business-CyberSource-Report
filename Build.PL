@@ -17,11 +17,14 @@ my $builder = Module::Build->new(
 		'Test::More'            => 0,
 		'XML::LibXML'           => 0,
 	},
-	requires =>
+	requires            =>
 	{
-		'perl' => 5.006,
+		'perl'                  => 5.006,
 	},
-	add_to_cleanup      => [ 'Business-CyberSource-Report-*' ],
+	add_to_cleanup      =>
+	[
+		'Business-CyberSource-Report-*',
+	],
 	create_makefile_pl  => 'traditional',
 );
 
