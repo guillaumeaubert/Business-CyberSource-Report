@@ -1,0 +1,32 @@
+---
+abstract: "The factory class for modules that retrieve\nCyberSource's XML reports."
+author:
+  - 'Guillaume Aubert <aubertg@cpan.org>'
+build_requires:
+  HTTP::Request: 0
+  LWP::UserAgent: 0
+  Test::More: 0
+  XML::LibXML: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Business-CyberSource-Report
+provides:
+  Business::CyberSource::Report:
+    file: lib/Business/CyberSource/Report.pm
+    version: 1.1
+  Business::CyberSource::Report::PaymentEvents:
+    file: lib/Business/CyberSource/Report/PaymentEvents.pm
+    version: 1.0
+  Business::CyberSource::Report::SingleTransaction:
+    file: lib/Business/CyberSource/Report/SingleTransaction.pm
+    version: 1.0
+requires:
+  perl: 5.006
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.1
