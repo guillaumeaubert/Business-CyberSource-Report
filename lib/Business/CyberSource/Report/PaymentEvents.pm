@@ -124,8 +124,8 @@ Guillaume Aubert, C<< <aubertg at cpan.org> >>.
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-business-cybersource-report-paymentevents at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=business-cybersource-report-paymentevents>.  I will be notified, and then you'll
+Please report any bugs or feature requests to C<bug-business-cybersource-report at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=business-cybersource-report>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -133,7 +133,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-	perldoc Business::CyberSource::Reporting::XML::PaymentEvents
+	perldoc Business::CyberSource::Report::PaymentEvents
 
 
 You can also look for information at:
@@ -144,25 +144,25 @@ You can also look for information at:
 
 RT: CPAN's request tracker
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=business-cybersource-report-paymentevents>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=business-cybersource-report>
 
 =item *
 
 AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/business-cybersource-report-paymentevents>
+L<http://annocpan.org/dist/business-cybersource-report>
 
 =item *
 
 CPAN Ratings
 
-L<http://cpanratings.perl.org/d/business-cybersource-report-paymentevents>
+L<http://cpanratings.perl.org/d/business-cybersource-report>
 
 =item *
 
 Search CPAN
 
-L<http://search.cpan.org/dist/business-cybersource-report-paymentevents/>
+L<http://search.cpan.org/dist/business-cybersource-report/>
 
 =back
 

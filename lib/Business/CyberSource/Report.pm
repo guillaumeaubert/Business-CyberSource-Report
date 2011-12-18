@@ -284,7 +284,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-	perldoc Business::CyberSource::Reporting::XML
+	perldoc Business::CyberSource::Report
 
 
 You can also look for information at:
