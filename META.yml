@@ -20,15 +20,15 @@ name: Business-CyberSource-Report
 provides:
   Business::CyberSource::Report:
     file: lib/Business/CyberSource/Report.pm
-    version: 1.1.1
+    version: v1.1.1
   Business::CyberSource::Report::PaymentEvents:
     file: lib/Business/CyberSource/Report/PaymentEvents.pm
-    version: 1.1.1
+    version: v1.1.1
   Business::CyberSource::Report::SingleTransaction:
     file: lib/Business/CyberSource/Report/SingleTransaction.pm
-    version: 1.1.1
+    version: v1.1.1
 requires:
   perl: 5.006
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: 1.1
+version: v1.1.1
