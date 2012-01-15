@@ -174,7 +174,7 @@ Thanks to Geeknet, Inc. L<http://www.geek.net> for funding the initial developme
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2011 Guillaume Aubert.
+Copyright 2011-2012 Guillaume Aubert.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the Artistic License.
