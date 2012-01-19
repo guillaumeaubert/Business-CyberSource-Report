@@ -21,8 +21,10 @@ t/33-use_production_system.t
 t/manifest.t
 t/module_versions.t
 t/PaymentEvents/00-load.t
+t/PaymentEvents/05-build.t
 t/PaymentEvents/10-retrieve.t
 t/pod.t
 t/pod-coverage.t
 t/SingleTransaction/00-load.t
+t/SingleTransaction/05-build.t
 t/SingleTransaction/10-retrieve.t
