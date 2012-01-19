@@ -19,11 +19,11 @@ CyberSource's XML reports.
 
 =head1 VERSION
 
-Version 1.1.1
+Version 1.1.2
 
 =cut
 
-our $VERSION = '1.1.1';
+our $VERSION = '1.1.2';
 
 our $LOADED_REPORT_MODULES;
 
