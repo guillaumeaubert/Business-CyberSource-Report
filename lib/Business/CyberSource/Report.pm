@@ -92,7 +92,7 @@ sub new
 	foreach my $arg ( qw( merchant_id password ) )
 	{
 		croak "The parameter >$arg< is missing"
-			unless defined( $args{ $arg } ) && ( $args{ $arg } ne '' );
+			if !defined( $args{ $arg } ) || ( $args{ $arg } eq '' );
 	}
 	
 	# By default per CyberSource's interface, the username is the merchant ID.
@@ -175,7 +175,7 @@ sub build
 	my ( $self, $module ) = @_;
 	
 	croak 'Please specify the name of the module to build'
-		unless defined( $module ) && ( $module ne '' );
+		if !defined( $module ) || ( $module eq '' );
 	
 	my $class = __PACKAGE__ . '::' . $module;
 	
