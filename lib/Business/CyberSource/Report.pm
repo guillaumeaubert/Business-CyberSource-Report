@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Class::Load qw();
 use Storable qw();
 use XML::LibXML qw();
 use LWP::UserAgent qw();
@@ -183,7 +184,7 @@ sub build
 	# If the module isn't already loaded, do that now.
 	if ( scalar( grep { $module eq $_ } @{ $self->list_loaded() || [] } ) == 0 )
 	{
-		eval "use $class; 1;" || croak "Failed to load $class, double-check the class name";
+		Class::Load::load_optional_class( $class ) || croak "Failed to load $class, double-check the class name";
 		$LOADED_REPORT_MODULES->{ $module } = undef;
 	}
 	

@@ -7,6 +7,7 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Business/CyberSource/Report.pm',
           'PREREQ_PM' => {
                            'Carp' => 0,
+                           'Class::Load' => 0,
                            'HTTP::Request' => 0,
                            'HTTP::Request::Common' => 0,
                            'LWP::UserAgent' => 0,
