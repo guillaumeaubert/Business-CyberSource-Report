@@ -132,7 +132,7 @@ sub retrieve
 	if ( defined( $include_extended_detail ) )
 	{
 		croak "The value of 'include_extended_detail' needs to be either 'Predecessor' or 'Related'"
-			if $include_extended_detail !~ m/^(Predecessor|Related)$/;
+			if $include_extended_detail !~ m/^(?:Predecessor|Related)$/;
 		croak "'include_extended_detail' is only available for versions >= 1.3"
 			if $version < 1.3;
 	}
