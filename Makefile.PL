@@ -6,10 +6,12 @@ WriteMakefile
           'NAME' => 'Business::CyberSource::Report',
           'VERSION_FROM' => 'lib/Business/CyberSource/Report.pm',
           'PREREQ_PM' => {
+                           'Carp' => 0,
                            'HTTP::Request' => 0,
                            'HTTP::Request::Common' => 0,
                            'LWP::UserAgent' => 0,
                            'Scalar::Util' => 0,
+                           'Storable' => 0,
                            'Test::More' => 0,
                            'XML::LibXML' => 0
                          },

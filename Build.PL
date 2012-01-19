@@ -15,6 +15,7 @@ my $builder = Module::Build->new(
 		'HTTP::Request::Common' => 0,
 		'LWP::UserAgent'        => 0,
 		'Scalar::Util'          => 0,
+		'Storable'              => 0,
 		'Test::More'            => 0,
 		'XML::LibXML'           => 0,
 	},

@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Storable qw();
 use XML::LibXML qw();
 use LWP::UserAgent qw();
 use HTTP::Request qw();
@@ -187,14 +188,12 @@ sub build
 	}
 	
 	my $object = bless(
-		{
-			# Create a copy of the factory's guts, the object will be a subclass of
-			# the factory and will be able to use all the information.
-			# Also, we don't want a change in the factory parameters to cascade to
-			# the objects previously built, so it makes sense to copy.
-			# TBD: copy only a selected subset of the content?
-			%$self,
-		},
+		# Create a copy of the factory's guts, the object will be a subclass of
+		# the factory and will be able to use all the information.
+		# Also, we don't want a change in the factory parameters to cascade to
+		# the objects previously built, so it makes sense to copy.
+		# TBD: copy only a selected subset of the content?
+		Storable::dclone( $self ),
 		$class,
 	);
 	
