@@ -125,7 +125,7 @@ dynamically when calling build().
 
 =cut
 
-sub list_loaded()
+sub list_loaded
 {
 	my ( $self ) = @_;
 	
