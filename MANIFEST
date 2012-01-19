@@ -23,6 +23,7 @@ t/module_versions.t
 t/PaymentEvents/00-load.t
 t/PaymentEvents/05-build.t
 t/PaymentEvents/10-retrieve.t
+t/perlcritic.t
 t/pod.t
 t/pod-coverage.t
 t/SingleTransaction/00-load.t
