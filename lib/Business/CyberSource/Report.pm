@@ -3,6 +3,7 @@ package Business::CyberSource::Report;
 use strict;
 use warnings;
 
+use Carp;
 use XML::LibXML qw();
 use LWP::UserAgent qw();
 use HTTP::Request qw();
@@ -90,7 +91,7 @@ sub new
 	# Check for required arguments.
 	foreach my $arg ( qw( merchant_id password ) )
 	{
-		die "The parameter >$arg< is missing"
+		croak "The parameter >$arg< is missing"
 			unless defined( $args{ $arg } ) && ( $args{ $arg } ne '' );
 	}
 	
@@ -173,7 +174,7 @@ sub build
 {
 	my ( $self, $module ) = @_;
 	
-	die 'Please specify the name of the module to build'
+	croak 'Please specify the name of the module to build'
 		unless defined( $module ) && ( $module ne '' );
 	
 	my $class = __PACKAGE__ . '::' . $module;
@@ -181,7 +182,7 @@ sub build
 	# If the module isn't already loaded, do that now.
 	if ( scalar( grep { $module eq $_ } @{ $self->list_loaded() || [] } ) == 0 )
 	{
-		eval "use $class; 1;" || die "Failed to load $class, double-check the class name";
+		eval "use $class; 1;" || croak "Failed to load $class, double-check the class name";
 		$LOADED_REPORT_MODULES->{ $module } = undef;
 	}
 	

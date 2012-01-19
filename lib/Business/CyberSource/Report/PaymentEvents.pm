@@ -5,6 +5,7 @@ use warnings;
 
 use base 'Business::CyberSource::Report';
 
+use Carp;
 use HTTP::Request::Common qw();
 use LWP::UserAgent qw();
 
@@ -85,13 +86,13 @@ sub retrieve
 	my $date = delete( $args{'date'} );
 	
 	# Verify the format.
-	die "The format needs to be 'csv' or 'xml'"
+	croak "The format needs to be 'csv' or 'xml'"
 		unless defined( $format ) && ( $format =~ m/^(csv|xml)$/ );
 	
 	# Verify the date.
-	die 'You need to specify a date for the transactions to retrieve'
+	croak 'You need to specify a date for the transactions to retrieve'
 		unless defined( $date );
-	die 'The format for the date of the transactions to retrieve is YYYY/MM/DD'
+	croak 'The format for the date of the transactions to retrieve is YYYY/MM/DD'
 		unless $date =~ m/^\d{4}\/\d{2}\/\d{2}$/;
 	
 	# Prepare the URL to hit.
@@ -108,9 +109,9 @@ sub retrieve
 	);
 	
 	my $response = $user_agent->request( $request );
-	die "Could not get a response from CyberSource"
+	croak "Could not get a response from CyberSource"
 		unless defined $response;
-	die "CyberSource returned the following error: " . $response->status_line()
+	croak "CyberSource returned the following error: " . $response->status_line()
 		unless $response->is_success();
 	
 	return $response->content();

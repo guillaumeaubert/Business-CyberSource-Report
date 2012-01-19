@@ -10,6 +10,7 @@ my $builder = Module::Build->new(
 	dist_version_from   => 'lib/Business/CyberSource/Report.pm',
 	build_requires      =>
 	{
+		'Carp'                  => 0,
 		'HTTP::Request'         => 0,
 		'HTTP::Request::Common' => 0,
 		'LWP::UserAgent'        => 0,

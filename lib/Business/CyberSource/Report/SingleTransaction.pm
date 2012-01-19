@@ -5,6 +5,7 @@ use warnings;
 
 use base 'Business::CyberSource::Report';
 
+use Carp;
 use HTTP::Request::Common qw();
 use LWP::UserAgent qw();
 
@@ -124,15 +125,15 @@ sub retrieve
 	my $version = delete( $args{'version'} ) || '1.7';
 	
 	# Verify the version number.
-	die 'The version number can only be 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 or 1.7'
+	croak 'The version number can only be 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 or 1.7'
 		unless $version =~ m/^1\.[1-7]$/;
 	
 	# Verify the value of $include_extended_detail.
 	if ( defined( $include_extended_detail ) )
 	{
-		die "The value of 'include_extended_detail' needs to be either 'Predecessor' or 'Related'"
+		croak "The value of 'include_extended_detail' needs to be either 'Predecessor' or 'Related'"
 			if $include_extended_detail !~ m/^(Predecessor|Related)$/;
-		die "'include_extended_detail' is only available for versions >= 1.3"
+		croak "'include_extended_detail' is only available for versions >= 1.3"
 			if $version < 1.3;
 	}
 	
@@ -154,7 +155,7 @@ sub retrieve
 	}
 	elsif ( !defined( $request_id ) && defined( $merchant_reference_number ) && defined( $target_date ) )
 	{
-		die 'The target_date format must be YYYYMMDD'
+		croak 'The target_date format must be YYYYMMDD'
 			unless $target_date =~ m/^\d{8}$/;
 		
 		$request_parameters->{'merchantReferenceNumber'} = $merchant_reference_number;
@@ -162,7 +163,7 @@ sub retrieve
 	}
 	else
 	{
-		die 'Please provide either a request_id or the combination of a '
+		croak 'Please provide either a request_id or the combination of a '
 			. 'merchant_reference_number and target_date parameters';
 	}
 	
@@ -182,9 +183,9 @@ sub retrieve
 	);
 	
 	my $response = $user_agent->request( $request );
-	die "Could not get a response from CyberSource"
+	croak "Could not get a response from CyberSource"
 		unless defined $response;
-	die "CyberSource returned the following error: " . $response->status_line()
+	croak "CyberSource returned the following error: " . $response->status_line()
 		unless $response->is_success();
 	
 	return $response->content();
