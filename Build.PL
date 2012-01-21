@@ -4,11 +4,11 @@ use warnings;
 use Module::Build;
 
 my $builder = Module::Build->new(
-	module_name         => 'Business::CyberSource::Report',
-	license             => 'artistic',
-	dist_author         => q{Guillaume Aubert <aubertg@cpan.org>},
-	dist_version_from   => 'lib/Business/CyberSource/Report.pm',
-	build_requires      =>
+	module_name          => 'Business::CyberSource::Report',
+	license              => 'artistic',
+	dist_author          => q{Guillaume Aubert <aubertg@cpan.org>},
+	dist_version_from    => 'lib/Business/CyberSource/Report.pm',
+	build_requires       =>
 	{
 		'Carp'                  => 0,
 		'Class::Load'           => 0,
@@ -20,15 +20,16 @@ my $builder = Module::Build->new(
 		'Test::More'            => 0,
 		'XML::LibXML'           => 0,
 	},
-	requires            =>
+	requires             =>
 	{
 		'perl'                  => 5.006,
 	},
-	add_to_cleanup      =>
+	add_to_cleanup       =>
 	[
 		'Business-CyberSource-Report-*',
 	],
-	create_makefile_pl  => 'traditional',
+	create_makefile_pl   => 'traditional',
+	recursive_test_files => 1,
 );
 
 $builder->create_build_script();
