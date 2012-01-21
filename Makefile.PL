@@ -13,11 +13,14 @@ WriteMakefile
                            'LWP::UserAgent' => 0,
                            'Scalar::Util' => 0,
                            'Storable' => 0,
-                           'Test::More' => 0,
+                           'Test::More' => '0.94',
                            'XML::LibXML' => 0
                          },
           'INSTALLDIRS' => 'site',
           'EXE_FILES' => [],
-          'PL_FILES' => {}
+          'PL_FILES' => {},
+          'test' => {
+                      'TESTS' => 't/*.t t/SingleTransaction/*.t t/PaymentEvents/*.t'
+                    }
         )
 ;
