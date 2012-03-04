@@ -1,5 +1,5 @@
 ---
-abstract: "The factory class for modules that retrieve\nCyberSource's XML reports."
+abstract: 'The factory class for modules that retrieve'
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
@@ -13,8 +13,9 @@ build_requires:
   Test::More: 0.94
   XML::LibXML: 0
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3603'
+  Module::Build: 0.4
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4, CPAN::Meta::Converter version 2.120530'
 license: artistic
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html

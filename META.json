@@ -1,0 +1,62 @@
+{
+   "abstract" : "The factory class for modules that retrieve",
+   "author" : [
+      "Guillaume Aubert <aubertg@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120530",
+   "license" : [
+      "artistic_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Business-CyberSource-Report",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Carp" : "0",
+            "Class::Load" : "0",
+            "HTTP::Request" : "0",
+            "HTTP::Request::Common" : "0",
+            "LWP::UserAgent" : "0",
+            "Scalar::Util" : "0",
+            "Storable" : "0",
+            "Test::More" : "0.94",
+            "XML::LibXML" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.4"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "perl" : "5.006"
+         }
+      }
+   },
+   "provides" : {
+      "Business::CyberSource::Report" : {
+         "file" : "lib/Business/CyberSource/Report.pm",
+         "version" : "v1.1.2"
+      },
+      "Business::CyberSource::Report::PaymentEvents" : {
+         "file" : "lib/Business/CyberSource/Report/PaymentEvents.pm",
+         "version" : "v1.1.2"
+      },
+      "Business::CyberSource::Report::SingleTransaction" : {
+         "file" : "lib/Business/CyberSource/Report/SingleTransaction.pm",
+         "version" : "v1.1.2"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://opensource.org/licenses/artistic-license.php"
+      ]
+   },
+   "version" : "v1.1.2"
+}
