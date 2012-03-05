@@ -18,11 +18,11 @@ Payment Events report.
 
 =head1 VERSION
 
-Version 1.1.2
+Version 1.1.3
 
 =cut
 
-our $VERSION = '1.1.2';
+our $VERSION = '1.1.3';
 
 our $TEST_URL = 'https://ebctest.cybersource.com/ebctest';
 our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc';

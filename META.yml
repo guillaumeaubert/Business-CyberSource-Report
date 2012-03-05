@@ -24,13 +24,13 @@ name: Business-CyberSource-Report
 provides:
   Business::CyberSource::Report:
     file: lib/Business/CyberSource/Report.pm
-    version: v1.1.2
+    version: v1.1.3
   Business::CyberSource::Report::PaymentEvents:
     file: lib/Business/CyberSource/Report/PaymentEvents.pm
-    version: v1.1.2
+    version: v1.1.3
   Business::CyberSource::Report::SingleTransaction:
     file: lib/Business/CyberSource/Report/SingleTransaction.pm
-    version: v1.1.2
+    version: v1.1.3
 requires:
   perl: 5.006
 resources:
@@ -38,4 +38,4 @@ resources:
   homepage: https://metacpan.org/release/Business-CyberSource-Report
   license: http://opensource.org/licenses/artistic-license.php
   repository: https://sourceforge.net/p/cybersourceperl/code
-version: v1.1.2
+version: v1.1.3
