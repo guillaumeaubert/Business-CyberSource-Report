@@ -11,7 +11,6 @@ build_requires:
   Scalar::Util: 0
   Storable: 0
   Test::More: 0.94
-  XML::LibXML: 0
 configure_requires:
   Module::Build: 0
 dynamic_config: 1

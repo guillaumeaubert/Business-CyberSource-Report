@@ -18,7 +18,6 @@ my $builder = Module::Build->new(
 		'Scalar::Util'          => 0,
 		'Storable'              => 0,
 		'Test::More'            => 0.94,
-		'XML::LibXML'           => 0,
 	},
 	requires             =>
 	{

@@ -6,9 +6,6 @@ use warnings;
 use Carp;
 use Class::Load qw();
 use Storable qw();
-use XML::LibXML qw();
-use LWP::UserAgent qw();
-use HTTP::Request qw();
 
 
 =head1 NAME
