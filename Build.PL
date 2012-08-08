@@ -17,6 +17,7 @@ my $builder = Module::Build->new(
 		'LWP::UserAgent'        => 0,
 		'Scalar::Util'          => 0,
 		'Storable'              => 0,
+		'Test::Exception'       => 0,
 		'Test::More'            => 0.94,
 	},
 	requires             =>
