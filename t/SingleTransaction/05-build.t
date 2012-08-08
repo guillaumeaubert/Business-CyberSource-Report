@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 
+use Test::Exception;
 use Test::More tests => 5;
 
 use Business::CyberSource::Report;
@@ -27,12 +28,11 @@ isa_ok(
 # Use the factory to get a Business::CyberSource::Report::Test object with
 # the correct connection parameters.
 my $report;
-eval
-{
-	$report = $report_factory->build( $module );
-};
-ok(
-	!$@,
+lives_ok(
+	sub
+	{
+		$report = $report_factory->build( $module );
+	},
 	"Build a $module report.",
 );
 isa_ok(

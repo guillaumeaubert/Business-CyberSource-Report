@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 
+use Test::Exception;
 use Test::More tests => 4;
 use Business::CyberSource::Report;
 
@@ -17,25 +18,24 @@ my $report_factory = Business::CyberSource::Report->new(
 );
 
 my $report;
-eval
-{
-	$report = $report_factory->build( 'SingleTransaction' )
-};
-ok(
-	!$@ && defined( $report ),
+lives_ok(
+	sub
+	{
+		$report = $report_factory->build( 'SingleTransaction' )
+	},
 	'Create a SingleTransaction report object.',
-) || diag( $@ );
+);
 
-ok(
-	$report->isa( 'Business::CyberSource::Report::SingleTransaction' ),
-	'The module type is correct.',
-) || diag( explain( $report ) );
+isa_ok(
+	$report,
+	'Business::CyberSource::Report::SingleTransaction',
+	'The module object',
+);
 
-eval
-{
-	$report = $report_factory->build( '_invalid_type_' )
-};
-ok(
-	$@,
+dies_ok(
+	sub
+	{
+		$report = $report_factory->build( '_invalid_type_' )
+	},
 	'Create a report object of a type that does not exist.',
 );

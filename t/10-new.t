@@ -3,7 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 17;
+use Test::Exception;
+use Test::More;
+
 use Business::CyberSource::Report;
 
 
@@ -66,6 +68,8 @@ my $tests =
 	},
 ];
 
+plan( tests => scalar( @$tests ) );
+
 foreach my $test ( @$tests )
 {
 	my $merchant_id = delete( $test->{'merchant_id'} );
@@ -75,42 +79,54 @@ foreach my $test ( @$tests )
 	my $test_name = delete( $test->{'test_name'} );
 	my $expected_success = delete( $test->{'expected_success'} );
 	
-	note ( uc( $test_name ) );
-	
-	my $report_factory;
-	eval
+	my $report_options =
 	{
-		$report_factory = Business::CyberSource::Report->new(
-			merchant_id           => $merchant_id,
-			username              => $username,
-			password              => $password,
-			use_production_system => $use_production_system,
-		);
+		merchant_id           => $merchant_id,
+		username              => $username,
+		password              => $password,
+		use_production_system => $use_production_system,
 	};
-	is(
-		$@ ? $@ : 'success',
-		$expected_success ? 'success' : $@,
-		'Create a new report factory object.',
-	);
 	
-	if ( $expected_success )
-	{
-		ok(
-			defined( $report_factory ),
-			'The report factory object is defined.',
-		);
-		
-		ok(
-			defined( $report_factory )
-			&& $report_factory->isa( 'Business::CyberSource::Report' ),
-			'The report factory is an object of the correct type.',
-		) || diag( "The object was blessed with >" . ref( $report_factory ) . "<." );
-	}
-	else
-	{
-		ok(
-			!defined( $report_factory ),
-			'No report factory object is returned.',
-		);
-	}
+	subtest(
+		uc( $test_name ),
+		sub
+		{
+			plan( tests => 2 );
+			
+			my $report_factory;
+			if ( $expected_success )
+			{
+				lives_ok(
+					sub
+					{
+						$report_factory = Business::CyberSource::Report->new(
+							%$report_options
+						);
+					}
+				);
+				
+				isa_ok(
+					$report_factory,
+					'Business::CyberSource::Report',
+					'The report factory object',
+				);
+			}
+			else
+			{
+				dies_ok(
+					sub
+					{
+						$report_factory = Business::CyberSource::Report->new(
+							%$report_options
+						);
+					}
+				);
+				
+				ok(
+					!defined( $report_factory ),
+					'No report factory object is returned.',
+				);
+			}
+		}
+	);
 }
