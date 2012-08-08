@@ -10,8 +10,7 @@ use Storable qw();
 
 =head1 NAME
 
-Business::CyberSource::Report - The factory class for modules that retrieve
-CyberSource's XML reports.
+Business::CyberSource::Report - Factory class for modules that retrieve CyberSource's XML reports.
 
 
 =head1 VERSION

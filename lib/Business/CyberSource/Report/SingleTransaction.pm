@@ -12,8 +12,7 @@ use LWP::UserAgent qw();
 
 =head1 NAME
 
-Business::CyberSource::Report::SingleTransaction - Interface to CyberSource's
-Single Transaction report.
+Business::CyberSource::Report::SingleTransaction - Interface to CyberSource's Single Transaction report.
 
 
 =head1 VERSION

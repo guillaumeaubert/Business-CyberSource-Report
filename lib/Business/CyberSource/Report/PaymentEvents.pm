@@ -12,8 +12,7 @@ use LWP::UserAgent qw();
 
 =head1 NAME
 
-Business::CyberSource::Report::PaymentEvents - Interface to CyberSource's
-Payment Events report.
+Business::CyberSource::Report::PaymentEvents - Interface to CyberSource's Payment Events report.
 
 
 =head1 VERSION
