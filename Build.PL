@@ -38,7 +38,7 @@ my $builder = Module::Build->new(
 	{
 		resources               =>
 		{
-			repository  => 'https://sourceforge.net/p/cybersourceperl/code',
+			repository  => 'https://github.com/guillaumeaubert/Business-CyberSource-Report',
 			homepage    => 'https://metacpan.org/release/Business-CyberSource-Report',
 			bugtracker  => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=business-cybersource-report',
 		},
