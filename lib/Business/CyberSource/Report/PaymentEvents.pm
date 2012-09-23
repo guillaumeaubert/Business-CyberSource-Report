@@ -17,11 +17,11 @@ Business::CyberSource::Report::PaymentEvents - Interface to CyberSource's Paymen
 
 =head1 VERSION
 
-Version 1.1.4
+Version 1.1.5
 
 =cut
 
-our $VERSION = '1.1.4';
+our $VERSION = '1.1.5';
 
 our $TEST_URL = 'https://ebctest.cybersource.com/ebctest';
 our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc';

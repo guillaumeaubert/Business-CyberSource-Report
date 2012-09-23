@@ -1,5 +1,8 @@
 Revision history for Business-CyberSource-Report
 
+v1.1.5  09/22/2012
+        * Moved repository to GitHub.
+
 v1.1.4  08/07/2012
         * Fixed POD.
         * Retrofitted tests to use Test::Exception.
