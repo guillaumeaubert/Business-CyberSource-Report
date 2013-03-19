@@ -40,7 +40,7 @@ my $builder = Module::Build->new(
 		{
 			repository  => 'https://github.com/guillaumeaubert/Business-CyberSource-Report',
 			homepage    => 'https://metacpan.org/release/Business-CyberSource-Report',
-			bugtracker  => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=business-cybersource-report',
+			bugtracker  => 'https://github.com/guillaumeaubert/Business-CyberSource-Report/issues',
 		},
 	},
 );
