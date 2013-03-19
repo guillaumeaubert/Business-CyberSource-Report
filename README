@@ -21,8 +21,8 @@ perldoc command.
 
 You can also look for information at:
 
-    RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Business-CyberSource-Report
+    GitHub's request tracker (report bugs here)
+        https://github.com/guillaumeaubert/Business-CyberSource-Report/issues
 
     AnnoCPAN, Annotated CPAN documentation
         http://annocpan.org/dist/Business-CyberSource-Report
