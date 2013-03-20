@@ -168,9 +168,9 @@ L<http://cpanratings.perl.org/d/business-cybersource-report>
 
 =item *
 
-Search CPAN
+MetaCPAN
 
-L<http://search.cpan.org/dist/business-cybersource-report/>
+L<https://metacpan.org/release/Business-CyberSource-Report>
 
 =back
 
