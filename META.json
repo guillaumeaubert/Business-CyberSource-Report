@@ -55,7 +55,7 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=business-cybersource-report"
+         "web" : "https://github.com/guillaumeaubert/Business-CyberSource-Report/issues"
       },
       "homepage" : "https://metacpan.org/release/Business-CyberSource-Report",
       "license" : [
