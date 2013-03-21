@@ -10,18 +10,18 @@ my $builder = Module::Build->new(
 	dist_version_from    => 'lib/Business/CyberSource/Report.pm',
 	build_requires       =>
 	{
-		'Carp'                  => 0,
-		'Class::Load'           => 0,
-		'HTTP::Request'         => 0,
-		'HTTP::Request::Common' => 0,
-		'LWP::UserAgent'        => 0,
 		'Scalar::Util'          => 0,
-		'Storable'              => 0,
 		'Test::Exception'       => 0,
 		'Test::More'            => 0.94,
 	},
 	requires             =>
 	{
+		'Carp'                  => 0,
+		'Class::Load'           => 0,
+		'HTTP::Request'         => 0,
+		'HTTP::Request::Common' => 0,
+		'LWP::UserAgent'        => 0,
+		'Storable'              => 0,
 		'perl'                  => 5.006,
 	},
 	add_to_cleanup       =>
