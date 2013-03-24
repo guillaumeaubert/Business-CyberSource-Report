@@ -273,8 +273,7 @@ Guillaume Aubert, C<< <aubertg at cpan.org> >>.
 =head1 BUGS
 
 Please report any bugs or feature requests through the web interface at
-L<https://github.com/guillaumeaubert/Business-CyberSource-Report/issues/new>,
-or email C<bug-business-cybersource-report at rt.cpan.org>.
+L<https://github.com/guillaumeaubert/Business-CyberSource-Report/issues/new>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 
@@ -295,12 +294,6 @@ You can also look for information at:
 GitHub's request tracker
 
 L<https://github.com/guillaumeaubert/Business-CyberSource-Report/issues>
-
-=item *
-
-RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=business-cybersource-report>
 
 =item *
 
