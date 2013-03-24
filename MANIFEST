@@ -9,6 +9,7 @@ META.json
 META.yml
 Makefile.PL
 README
+examples/examples.txt
 ignore.txt
 lib/Business/CyberSource/Report.pm
 lib/Business/CyberSource/Report/PaymentEvents.pm
