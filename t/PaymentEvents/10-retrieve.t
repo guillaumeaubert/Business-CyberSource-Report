@@ -3,8 +3,10 @@
 use strict;
 use warnings;
 
-use Test::More tests => 1;
 use Business::CyberSource::Report::PaymentEvents;
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 1;
+
 
 ok(
 	Business::CyberSource::Report::PaymentEvents->can( 'retrieve' ),

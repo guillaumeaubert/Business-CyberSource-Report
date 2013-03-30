@@ -3,9 +3,10 @@
 use strict;
 use warnings;
 
-use Test::More tests => 7;
-use Scalar::Util qw();
 use Business::CyberSource::Report;
+use Scalar::Util qw();
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 7;
 
 
 my $modules =

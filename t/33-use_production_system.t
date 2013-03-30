@@ -3,8 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
 use Business::CyberSource::Report;
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 4;
 
 
 foreach my $use_production_system ( 0..1 )

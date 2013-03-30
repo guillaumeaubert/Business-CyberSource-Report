@@ -3,8 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 1;
 use Business::CyberSource::Report;
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 1;
 
 
 my $report_factory = Business::CyberSource::Report->new(

@@ -5,6 +5,7 @@ author:
 build_requires:
   Scalar::Util: 0
   Test::Exception: 0
+  Test::FailWarnings: 0
   Test::More: 0.94
 configure_requires:
   Module::Build: 0

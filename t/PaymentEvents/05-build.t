@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use Test::Exception;
-use Test::More tests => 5;
-
 use Business::CyberSource::Report;
+use Test::Exception;
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 5;
 
 
 # Name of the report module to test.

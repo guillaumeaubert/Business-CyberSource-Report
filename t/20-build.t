@@ -3,9 +3,10 @@
 use strict;
 use warnings;
 
-use Test::Exception;
-use Test::More tests => 4;
 use Business::CyberSource::Report;
+use Test::Exception;
+use Test::FailWarnings -allow_deps => 1;
+use Test::More tests => 4;
 
 
 use_ok( 'Business::CyberSource::Report::SingleTransaction' );
