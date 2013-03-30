@@ -1,5 +1,16 @@
 Revision history for Business-CyberSource-Report
 
+v1.1.7  2013-03-30
+        * Added configuration for Travis-CI.
+        * Updated bug tracker links.
+        * Updated links to point to MetaCPAN.
+        * (GitHub #1) Fixed prerequisites.
+        * Added examples/ directory.
+        * Added release tests.
+        * Moved release tests to xt/.
+        * Added Test::FailWarnings to all tests.
+        * Fixed date format in Changes file.
+
 v1.1.6  2012-10-03
         * Relicensed as GPLv3
 

@@ -42,15 +42,15 @@
    "provides" : {
       "Business::CyberSource::Report" : {
          "file" : "lib/Business/CyberSource/Report.pm",
-         "version" : "v1.1.6"
+         "version" : "v1.1.7"
       },
       "Business::CyberSource::Report::PaymentEvents" : {
          "file" : "lib/Business/CyberSource/Report/PaymentEvents.pm",
-         "version" : "v1.1.6"
+         "version" : "v1.1.7"
       },
       "Business::CyberSource::Report::SingleTransaction" : {
          "file" : "lib/Business/CyberSource/Report/SingleTransaction.pm",
-         "version" : "v1.1.6"
+         "version" : "v1.1.7"
       }
    },
    "release_status" : "stable",
@@ -66,5 +66,5 @@
          "url" : "https://github.com/guillaumeaubert/Business-CyberSource-Report"
       }
    },
-   "version" : "v1.1.6"
+   "version" : "v1.1.7"
 }
