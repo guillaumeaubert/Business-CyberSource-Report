@@ -28,6 +28,7 @@ t/PaymentEvents/10-retrieve.t
 t/SingleTransaction/00-load.t
 t/SingleTransaction/05-build.t
 t/SingleTransaction/10-retrieve.t
+xt/changes.t
 xt/kwalitee.t
 xt/manifest.t
 xt/module_versions.t
