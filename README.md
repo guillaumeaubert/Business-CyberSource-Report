@@ -1,9 +1,14 @@
 Business-CyberSource-Report
+===========================
+
+[![Build Status](https://travis-ci.org/guillaumeaubert/Business-CyberSource-Report.png?branch=master)](https://travis-ci.org/guillaumeaubert/Business-CyberSource-Report)
 
 Business::CyberSource::Report offers a convenient Perl interface to retrieve
 the various reports that CyberSource provides.
 
+
 INSTALLATION
+------------
 
 To install this module, run the following commands:
 
@@ -12,29 +17,33 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
+
 SUPPORT AND DOCUMENTATION
+-------------------------
 
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Business::CyberSource::Report
+	perldoc Business::CyberSource::Report
+
 
 You can also look for information at:
 
-    GitHub's request tracker (report bugs here)
-        https://github.com/guillaumeaubert/Business-CyberSource-Report/issues
+ * [GitHub's request tracker (report bugs here)]
+   (https://github.com/guillaumeaubert/Business-CyberSource-Report/issues)
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Business-CyberSource-Report
+ * [AnnoCPAN, Annotated CPAN documentation]
+   (http://annocpan.org/dist/Business-CyberSource-Report)
 
-    CPAN Ratings
-        http://cpanratings.perl.org/d/Business-CyberSource-Report
+ * [CPAN Ratings]
+   (http://cpanratings.perl.org/d/Business-CyberSource-Report)
 
-    MetaCPAN
-        https://metacpan.org/release/Business-CyberSource-Report
+ * [MetaCPAN]
+   (https://metacpan.org/release/Business-CyberSource-Report)
 
 
 LICENSE AND COPYRIGHT
+---------------------
 
 Copyright (C) 2011-2013 Guillaume Aubert
 
