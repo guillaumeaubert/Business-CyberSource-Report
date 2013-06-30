@@ -75,7 +75,10 @@ The desired format of the report, 'csv' or 'xml'.
 The date of the transactions to include in the report, using the format
 YYYY/MM/DD.
 
-date: the date of the transactions to include in the report, using the format YYYY/MM/DD.
+=item * user_agent (optional)
+
+By default, C<LWP::UserAgent>. This is useful for tests, see the documentation
+for L<Test::LWP::UserAgent> in particular.
 
 =back
 
@@ -86,6 +89,7 @@ sub retrieve
 	my ( $self, %args ) = @_;
 	my $format = delete( $args{'format'} );
 	my $date = delete( $args{'date'} );
+	my $user_agent = delete( $args{'user_agent'} ) || LWP::UserAgent->new();
 	
 	# Verify the format.
 	croak "The format needs to be 'csv' or 'xml'"
@@ -103,7 +107,6 @@ sub retrieve
 		. '/PaymentEventsReport.' . $format;
 	
 	# Send the query.
-	my $user_agent = LWP::UserAgent->new();
 	my $request = HTTP::Request::Common::GET( $url );
 	$request->authorization_basic(
 		$self->get_username(),
