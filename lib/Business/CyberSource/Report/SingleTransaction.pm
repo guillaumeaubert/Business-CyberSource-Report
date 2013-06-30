@@ -109,6 +109,11 @@ are 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7.
 See L<http://apps.cybersource.com/library/documentation/dev_guides/Reporting_Developers_Guide/html/downloading.htm#downloading_10837_1027265>
 for more details about the differences.
 
+=item * user_agent (optional)
+
+By default, C<LWP::UserAgent>. This is useful for tests, see the documentation
+for L<Test::LWP::UserAgent> in particular.
+
 =back
 
 =cut
@@ -119,6 +124,7 @@ sub retrieve
 	my $request_id = delete( $args{'request_id'} );
 	my $merchant_reference_number = delete( $args{'merchant_reference_number'} );
 	my $target_date = delete( $args{'target_date'} );
+	my $user_agent = delete( $args{'user_agent'} ) || LWP::UserAgent->new();
 	
 	# Defaults.
 	my $include_extended_detail = delete( $args{'include_extended_detail'} );
@@ -172,7 +178,6 @@ sub retrieve
 		if defined( $include_extended_detail );
 	
 	# Send the query.
-	my $user_agent = LWP::UserAgent->new();
 	my $request = HTTP::Request::Common::POST(
 		$self->use_production_system() ? $PRODUCTION_URL : $TEST_URL,
 		Content => $request_parameters,
