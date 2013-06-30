@@ -43,8 +43,9 @@ my $builder = $class->new(
 	{
 		'Scalar::Util'          => 0,
 		'Test::Exception'       => 0,
-		'Test::More'            => 0.94,
 		'Test::FailWarnings'    => 0,
+		'Test::LWP::UserAgent'  => 0,
+		'Test::More'            => 0.94,
 	},
 	requires             =>
 	{
