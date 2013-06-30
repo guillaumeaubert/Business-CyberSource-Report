@@ -66,11 +66,14 @@ Parameters:
 
 =over
 
-=item *
+=item * format (mandatory)
 
-format: the desired format of the report, 'csv' or 'xml'.
+The desired format of the report, 'csv' or 'xml'.
 
-=item *
+=item * date (mandatory)
+
+The date of the transactions to include in the report, using the format
+YYYY/MM/DD.
 
 date: the date of the transactions to include in the report, using the format YYYY/MM/DD.
 
