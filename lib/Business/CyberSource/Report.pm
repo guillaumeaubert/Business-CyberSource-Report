@@ -28,7 +28,7 @@ our $LOADED_REPORT_MODULES;
 
 	use Business::CyberSource::Report;
 	use Business::CyberSource::Report::Test;
-	
+
 	# Generate a report factory.
 	my $report_factory = Business::CyberSource::Report->new(
 		merchant_id           => $merchant_id,
@@ -36,11 +36,11 @@ our $LOADED_REPORT_MODULES;
 		password              => $password,
 		use_production_system => $use_production_system,
 	);
-	
+
 	# Use the factory to get a Business::CyberSource::Report::Test object with
 	# the correct connection parameters.
 	my $test_report = $report_factory->build( 'test' );
-	
+
 	# Retrieve a list of the report modules that have been loaded in memory,
 	# either via "use" or a require by build()
 	my $available_reports = $report_factory->list_loaded();
@@ -85,22 +85,22 @@ system (1) or the test system (0). Off by default.
 sub new
 {
 	my ( $class, %args ) = @_;
-	
+
 	# Check for required arguments.
 	foreach my $arg ( qw( merchant_id password ) )
 	{
 		croak "The parameter >$arg< is missing"
 			if !defined( $args{ $arg } ) || ( $args{ $arg } eq '' );
 	}
-	
+
 	# By default per CyberSource's interface, the username is the merchant ID.
 	$args{'username'} = $args{'merchant_id'}
 		unless defined( $args{'username'} );
-	
+
 	# By default, use the test environment.
 	$args{'use_production_system'} = 0
 		unless defined( $args{'use_production_system'} );
-	
+
 	# Build the object, blessed with the child's class to simplify new() in
 	# children classes.
 	my $self = bless(
@@ -110,7 +110,7 @@ sub new
 		},
 		$class,
 	);
-	
+
 	return $self;
 }
 
@@ -127,21 +127,21 @@ dynamically when calling build().
 sub list_loaded
 {
 	my ( $self ) = @_;
-	
+
 	if ( !defined( $LOADED_REPORT_MODULES ) )
 	{
 		$LOADED_REPORT_MODULES = {};
-		
+
 		my $main_module_path = __PACKAGE__;
 		$main_module_path =~ s/::/\//g;
-		
+
 		foreach my $module ( keys %INC )
 		{
 			next unless $module =~ m/^\Q$main_module_path\/\E([^\/]+)\.pm/;
 			$LOADED_REPORT_MODULES->{ $1 } = undef;
 		}
 	}
-	
+
 	return [ keys %$LOADED_REPORT_MODULES ];
 }
 
@@ -171,19 +171,19 @@ Business::CyberSource::Report::SingleTransaction.
 sub build
 {
 	my ( $self, $module ) = @_;
-	
+
 	croak 'Please specify the name of the module to build'
 		if !defined( $module ) || ( $module eq '' );
-	
+
 	my $class = __PACKAGE__ . '::' . $module;
-	
+
 	# If the module isn't already loaded, do that now.
 	if ( scalar( grep { $module eq $_ } @{ $self->list_loaded() || [] } ) == 0 )
 	{
 		Class::Load::load_optional_class( $class ) || croak "Failed to load $class, double-check the class name";
 		$LOADED_REPORT_MODULES->{ $module } = undef;
 	}
-	
+
 	my $object = bless(
 		# Create a copy of the factory's guts, the object will be a subclass of
 		# the factory and will be able to use all the information.
@@ -193,7 +193,7 @@ sub build
 		Storable::dclone( $self ),
 		$class,
 	);
-	
+
 	return $object;
 }
 
@@ -211,7 +211,7 @@ Return the username to use to connect to the service.
 sub get_username
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'username'};
 }
 
@@ -227,7 +227,7 @@ Return the password to use to connect to the service.
 sub get_password
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'password'};
 }
 
@@ -243,7 +243,7 @@ Return the merchant ID to use to connect to the service.
 sub get_merchant_id
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'merchant_id'};
 }
 
@@ -260,7 +260,7 @@ Otherwise, the Test Business Center is used.
 sub use_production_system
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'use_production_system'} ? 1 : 0;
 }
 

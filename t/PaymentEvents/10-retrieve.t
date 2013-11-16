@@ -46,7 +46,7 @@ my $tests =
 		},
 		throws => qr/\QThe format needs to be 'csv' or 'xml'\E/,
 	},
-	
+
 	# Test 'date' argument.
 	{
 		name   => "The 'date' argument is mandatory.",

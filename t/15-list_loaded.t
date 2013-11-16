@@ -51,7 +51,7 @@ is(
 foreach my $module ( @$modules )
 {
 	my ( $module_name ) = ( $module =~ m/^\QBusiness::CyberSource::Report::\E([^\:]+)$/ );
-	
+
 	is(
 		scalar( grep { $module_name eq $_ } @$loaded_report_modules ),
 		1,

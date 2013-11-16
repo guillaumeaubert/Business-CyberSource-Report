@@ -16,12 +16,12 @@ foreach my $use_production_system ( 0..1 )
 		password              => 'test_password',
 		use_production_system => $use_production_system,
 	);
-	
+
 	ok(
 		defined( $report_factory ),
 		'Create a report using the dev environment.',
 	);
-	
+
 	is(
 		$report_factory->use_production_system(),
 		$use_production_system,

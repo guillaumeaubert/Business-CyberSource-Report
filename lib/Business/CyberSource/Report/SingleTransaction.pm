@@ -32,26 +32,26 @@ our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc/Query';
 This module is an interface to the Single Transaction report from CyberSource.
 
 	use Business::CyberSource::Report;
-	
+
 	# Generate a report factory.
 	my $report_factory = Business::CyberSource::Report->new(
 		merchant_id => $merchant_id,
 		username    => $username,
 		password    => $password,
 	);
-	
+
 	# Build a Business::CyberSource::Report::SingleTransaction object.
 	my $single_transaction_report = $report_factory->build( 'SingleTransaction' );
-	
+
 	# Retrieve a Single Transaction report by Request ID.
 	$single_transaction_report->retrieve(
 		request_id              => $request_id,
 		include_extended_detail => $include_extended_detail,
 		version                 => $version,
 	);
-	
+
 	# Retrieve a Single Transaction report using a combination of merchant
-	# reference number and 
+	# reference number and
 	$single_transaction_report->retrieve(
 		merchant_reference_number => $merchant_reference_number,
 		target_date               => $target_date,
@@ -72,7 +72,7 @@ Build and send the request to CyberSource.
 		include_extended_detail => $include_extended_detail,
 		version                 => $version,
 	);
-	
+
 	# Retrieve a Single Transaction report using a combination of merchant
 	# reference number and target date.
 	$single_transaction_report->retrieve(
@@ -125,15 +125,15 @@ sub retrieve
 	my $merchant_reference_number = delete( $args{'merchant_reference_number'} );
 	my $target_date = delete( $args{'target_date'} );
 	my $user_agent = delete( $args{'user_agent'} ) || LWP::UserAgent->new();
-	
+
 	# Defaults.
 	my $include_extended_detail = delete( $args{'include_extended_detail'} );
 	my $version = delete( $args{'version'} ) || '1.7';
-	
+
 	# Verify the version number.
 	croak 'The version number can only be 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 or 1.7'
 		unless $version =~ m/^1\.[1-7]$/;
-	
+
 	# Verify the value of $include_extended_detail.
 	if ( defined( $include_extended_detail ) )
 	{
@@ -142,7 +142,7 @@ sub retrieve
 		croak "'include_extended_detail' is only available for versions >= 1.3"
 			if $version < 1.3;
 	}
-	
+
 	# Prepare the request parameters.
 	my $request_parameters =
 	{
@@ -153,7 +153,7 @@ sub retrieve
 		type          => 'transaction',
 		subtype       => 'transactionDetail',
 	};
-	
+
 	# Add the request_id or merchant_reference_number/target_date.
 	if ( defined( $request_id ) && !defined( $merchant_reference_number ) && !defined( $target_date ) )
 	{
@@ -163,7 +163,7 @@ sub retrieve
 	{
 		croak 'The target_date format must be YYYYMMDD'
 			unless $target_date =~ m/^\d{8}$/;
-		
+
 		$request_parameters->{'merchantReferenceNumber'} = $merchant_reference_number;
 		$request_parameters->{'targetDate'} = $target_date;
 	}
@@ -172,11 +172,11 @@ sub retrieve
 		croak 'Please provide either a request_id or the combination of a '
 			. 'merchant_reference_number and target_date parameters';
 	}
-	
+
 	# Add option to get extended details.
 	$request_parameters->{'includeExtendedDetail'} = $include_extended_detail
 		if defined( $include_extended_detail );
-	
+
 	# Send the query.
 	my $request = HTTP::Request::Common::POST(
 		$self->use_production_system() ? $PRODUCTION_URL : $TEST_URL,
@@ -186,13 +186,13 @@ sub retrieve
 		$self->get_username(),
 		$self->get_password(),
 	);
-	
+
 	my $response = $user_agent->request( $request );
 	croak "Could not get a response from CyberSource"
 		unless defined $response;
 	croak "CyberSource returned the following error: " . $response->status_line()
 		unless $response->is_success();
-	
+
 	return $response->content();
 }
 

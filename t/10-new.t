@@ -78,7 +78,7 @@ foreach my $test ( @$tests )
 	my $use_production_system = delete( $test->{'use_production_system'} );
 	my $test_name = delete( $test->{'test_name'} );
 	my $expected_success = delete( $test->{'expected_success'} );
-	
+
 	my $report_options =
 	{
 		merchant_id           => $merchant_id,
@@ -86,13 +86,13 @@ foreach my $test ( @$tests )
 		password              => $password,
 		use_production_system => $use_production_system,
 	};
-	
+
 	subtest(
 		uc( $test_name ),
 		sub
 		{
 			plan( tests => 2 );
-			
+
 			my $report_factory;
 			if ( $expected_success )
 			{
@@ -104,7 +104,7 @@ foreach my $test ( @$tests )
 						);
 					}
 				);
-				
+
 				isa_ok(
 					$report_factory,
 					'Business::CyberSource::Report',
@@ -121,7 +121,7 @@ foreach my $test ( @$tests )
 						);
 					}
 				);
-				
+
 				ok(
 					!defined( $report_factory ),
 					'No report factory object is returned.',

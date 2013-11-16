@@ -32,17 +32,17 @@ our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc';
 This module is an interface to the Payment Events report from CyberSource.
 
 	use Business::CyberSource::Report;
-	
+
 	# Generate a report factory.
 	my $report_factory = Business::CyberSource::Report->new(
 		merchant_id => $merchant_id,
 		username    => $username,
 		password    => $password,
 	);
-	
+
 	# Build a Business::CyberSource::Report::PaymentEvents object.
 	my $payment_events_report = $report_factory->build( 'PaymentEvents' );
-	
+
 	# Retrieve the Payment Events report for a given date.
 	$payment_events_report->retrieve(
 		format => $format,
@@ -90,35 +90,35 @@ sub retrieve
 	my $format = delete( $args{'format'} );
 	my $date = delete( $args{'date'} );
 	my $user_agent = delete( $args{'user_agent'} ) || LWP::UserAgent->new();
-	
+
 	# Verify the format.
 	croak "The format needs to be 'csv' or 'xml'"
 		unless defined( $format ) && ( $format =~ m/^(csv|xml)$/ );
-	
+
 	# Verify the date.
 	croak 'You need to specify a date for the transactions to retrieve'
 		unless defined( $date );
 	croak 'The format for the date of the transactions to retrieve is YYYY/MM/DD'
 		unless $date =~ m/^\d{4}\/\d{2}\/\d{2}$/;
-	
+
 	# Prepare the URL to hit.
 	my $url = ( $self->use_production_system() ? $PRODUCTION_URL : $TEST_URL )
 		. '/DownloadReport/' . $date . '/' . $self->get_merchant_id()
 		. '/PaymentEventsReport.' . $format;
-	
+
 	# Send the query.
 	my $request = HTTP::Request::Common::GET( $url );
 	$request->authorization_basic(
 		$self->get_username(),
 		$self->get_password(),
 	);
-	
+
 	my $response = $user_agent->request( $request );
 	croak "Could not get a response from CyberSource"
 		unless defined $response;
 	croak "CyberSource returned the following error: " . $response->status_line()
 		unless $response->is_success();
-	
+
 	return $response->content();
 }
 

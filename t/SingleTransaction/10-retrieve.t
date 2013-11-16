@@ -31,7 +31,7 @@ my $tests =
 		},
 		throws => qr/\A\QPlease provide either a request_id or the combination of a merchant_reference_number and target_date parameters\E/,
 	},
-	
+
 	# Test 'merchant_reference_number' and 'target_date' arguments.
 	{
 		name   => "Successful request using a combination of 'merchant_reference_number' and 'target_date'.",
@@ -74,7 +74,7 @@ my $tests =
 		},
 		throws => qr/\A\QThe target_date format must be YYYYMMDD\E/,
 	},
-	
+
 	# Test 'version' argument.
 	{
 		name   => "The 'version' argument must be valid.",
@@ -86,7 +86,7 @@ my $tests =
 		},
 		throws => qr/\A\QThe version number can only be\E/,
 	},
-	
+
 	# Test 'include_extended_detail' argument.
 	{
 		name   => "The 'include_extended_detail' argument is optional.",
