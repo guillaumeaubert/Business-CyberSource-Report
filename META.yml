@@ -3,19 +3,19 @@ abstract: "Factory class for modules that retrieve CyberSource's XML reports."
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
-  Scalar::Util: 0
-  Test::Exception: 0
-  Test::FailWarnings: 0
-  Test::LWP::UserAgent: 0
-  Test::More: 0.94
+  Scalar::Util: '0'
+  Test::Exception: '0'
+  Test::FailWarnings: '0'
+  Test::LWP::UserAgent: '0'
+  Test::More: '0.94'
 configure_requires:
-  Module::Build: 0
+  Module::Build: '0'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4005, CPAN::Meta::Converter version 2.131560'
-license: open_source
+generated_by: 'Module::Build version 0.4205, CPAN::Meta::Converter version 2.140640'
+license: gpl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Business-CyberSource-Report
 provides:
   Business::CyberSource::Report:
@@ -28,13 +28,13 @@ provides:
     file: lib/Business/CyberSource/Report/SingleTransaction.pm
     version: v1.1.7
 requires:
-  Carp: 0
-  Class::Load: 0
-  HTTP::Request: 0
-  HTTP::Request::Common: 0
-  LWP::UserAgent: 0
-  Storable: 0
-  perl: 5.006
+  Carp: '0'
+  Class::Load: '0'
+  HTTP::Request: '0'
+  HTTP::Request::Common: '0'
+  LWP::UserAgent: '0'
+  Storable: '0'
+  perl: '5.006'
 resources:
   bugtracker: https://github.com/guillaumeaubert/Business-CyberSource-Report/issues
   homepage: https://metacpan.org/release/Business-CyberSource-Report
