@@ -1,5 +1,14 @@
 Revision history for Business-CyberSource-Report
 
+v1.1.8  2014-04-20
+        - Fixed "package version matches dist version" for CPANTS.
+        - Fixed license declared in meta files.
+        - Added tests for retrieve().
+        - Added optional user_agent argument for tests.
+        - Fixed prerequisites.
+        - Switched README to markdown.
+        - General cleanup.
+
 v1.1.7  2013-03-30
         - Added configuration for Travis-CI.
         - Updated bug tracker links.

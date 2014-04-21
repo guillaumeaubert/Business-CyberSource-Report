@@ -20,13 +20,13 @@ name: Business-CyberSource-Report
 provides:
   Business::CyberSource::Report:
     file: lib/Business/CyberSource/Report.pm
-    version: v1.1.7
+    version: v1.1.8
   Business::CyberSource::Report::PaymentEvents:
     file: lib/Business/CyberSource/Report/PaymentEvents.pm
-    version: v1.1.7
+    version: v1.1.8
   Business::CyberSource::Report::SingleTransaction:
     file: lib/Business/CyberSource/Report/SingleTransaction.pm
-    version: v1.1.7
+    version: v1.1.8
 requires:
   Carp: '0'
   Class::Load: '0'
@@ -40,4 +40,4 @@ resources:
   homepage: https://metacpan.org/release/Business-CyberSource-Report
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/guillaumeaubert/Business-CyberSource-Report
-version: v1.1.7
+version: v1.1.8
