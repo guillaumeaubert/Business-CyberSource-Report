@@ -3,7 +3,7 @@ Business-CyberSource-Report
 
 [![Build Status](https://travis-ci.org/guillaumeaubert/Business-CyberSource-Report.svg?branch=master)](https://travis-ci.org/guillaumeaubert/Business-CyberSource-Report)
 [![Coverage Status](https://coveralls.io/repos/guillaumeaubert/Business-CyberSource-Report/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/Business-CyberSource-Report?branch=master)
-[![Latest Version](https://img.shields.io/github/tag/guillaumeaubert/Business-CyberSource-Report.svg?style=flat)](https://metacpan.org/release/Business-CyberSource-Report)
+[![CPAN](https://img.shields.io/cpan/v/Business-CyberSource-Report.svg)](https://metacpan.org/release/Business-CyberSource-Report)
 
 Business::CyberSource::Report offers a convenient Perl interface to retrieve
 the various reports that CyberSource provides.
