@@ -15,11 +15,11 @@ Business::CyberSource::Report - Factory class for modules that retrieve CyberSou
 
 =head1 VERSION
 
-Version 1.1.8
+Version 1.2.0
 
 =cut
 
-our $VERSION = '1.1.8';
+our $VERSION = '1.2.0';
 
 our $LOADED_REPORT_MODULES;
 

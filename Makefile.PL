@@ -3,26 +3,26 @@ require 5.006;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'NAME' => 'Business::CyberSource::Report',
-  'VERSION_FROM' => 'lib/Business/CyberSource/Report.pm',
-  'PREREQ_PM' => {
-                   'Carp' => 0,
-                   'Class::Load' => 0,
-                   'HTTP::Request' => 0,
-                   'HTTP::Request::Common' => 0,
-                   'LWP::UserAgent' => 0,
-                   'Scalar::Util' => 0,
-                   'Storable' => 0,
-                   'Test::Exception' => 0,
-                   'Test::FailWarnings' => 0,
-                   'Test::LWP::UserAgent' => 0,
-                   'Test::More' => '0.94'
-                 },
-  'INSTALLDIRS' => 'site',
-  'EXE_FILES' => [],
-  'PL_FILES' => {},
   'test' => {
               'TESTS' => 't/*.t t/SingleTransaction/*.t t/PaymentEvents/*.t'
-            }
+            },
+  'EXE_FILES' => [],
+  'VERSION_FROM' => 'lib/Business/CyberSource/Report.pm',
+  'PREREQ_PM' => {
+                   'Storable' => 0,
+                   'Test::LWP::UserAgent' => 0,
+                   'HTTP::Request' => 0,
+                   'HTTP::Request::Common' => 0,
+                   'Scalar::Util' => 0,
+                   'Carp' => 0,
+                   'LWP::UserAgent' => 0,
+                   'Test::Exception' => 0,
+                   'Test::More' => '0.94',
+                   'Class::Load' => 0,
+                   'Test::FailWarnings' => 0
+                 },
+  'PL_FILES' => {},
+  'INSTALLDIRS' => 'site',
+  'NAME' => 'Business::CyberSource::Report'
 )
 ;

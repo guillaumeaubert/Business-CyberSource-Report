@@ -17,11 +17,11 @@ Business::CyberSource::Report::SingleTransaction - Interface to CyberSource's Si
 
 =head1 VERSION
 
-Version 1.1.8
+Version 1.2.0
 
 =cut
 
-our $VERSION = '1.1.8';
+our $VERSION = '1.2.0';
 
 our $TEST_URL = 'https://ebctest.cybersource.com/ebctest/Query';
 our $PRODUCTION_URL = 'https://ebc.cybersource.com/ebc/Query';
